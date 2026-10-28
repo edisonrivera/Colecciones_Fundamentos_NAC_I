@@ -104,7 +104,7 @@ public class UniversidadEstudiantes07 {
 
         // a) Promedio por estudiante
         double[] promEstudiantes = promedioPorEstudiante(notas); // Calcula los promedios por estudiante
-        IO.println("=== a) PROMEDIO POR ESTUDIANTE ==="); // Título de la sección
+        IO.println("=== PROMEDIO POR ESTUDIANTE ==="); // Título de la sección
         for (int i = 0; i < n; i++) { // Recorre cada estudiante
             IO.println(String.format("Estudiante %d: %.2f", codigos[i], promEstudiantes[i])); // Imprime su promedio
         }
@@ -112,7 +112,7 @@ public class UniversidadEstudiantes07 {
 
         // b) Promedio por materia
         double[] promMaterias = promedioPorMateria(notas); // Calcula los promedios por materia
-        IO.println("=== b) PROMEDIO POR MATERIA ==="); // Título de la sección
+        IO.println("=== PROMEDIO POR MATERIA ==="); // Título de la sección
         for (int j = 0; j < MATERIAS; j++) { // Recorre cada materia
             IO.println(String.format("Materia %d: %.2f", j + 1, promMaterias[j])); // Imprime su promedio
         }
@@ -120,14 +120,14 @@ public class UniversidadEstudiantes07 {
 
         // c) Estudiante con mayor promedio
         int mejor = mejorEstudiante(promEstudiantes); // Obtiene la posición del mejor estudiante
-        IO.println("=== c) ESTUDIANTE CON MAYOR PROMEDIO ==="); // Título de la sección
+        IO.println("=== ESTUDIANTE CON MAYOR PROMEDIO ==="); // Título de la sección
         IO.println(String.format("Estudiante %d con promedio %.2f", codigos[mejor], promEstudiantes[mejor])); // Muestra el resultado
         IO.println(); // Línea en blanco
 
         // d) y e) Aprobados y reprobados por materia
         int[] aprobados = contarPorMateria(notas, true); // Cuenta los aprobados por materia
         int[] reprobados = contarPorMateria(notas, false); // Cuenta los reprobados por materia
-        IO.println("=== d) APROBADOS y e) REPROBADOS POR MATERIA ==="); // Título de la sección
+        IO.println("=== APROBADOS y REPROBADOS POR MATERIA ==="); // Título de la sección
         for (int j = 0; j < MATERIAS; j++) { // Recorre cada materia
             IO.println(String.format("Materia %d: aprobados = %d, reprobados = %d", j + 1, aprobados[j], reprobados[j])); // Muestra ambos conteos
         }
