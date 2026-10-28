@@ -28,3 +28,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### IntellJ ###
+COLECCIONES_FUNDAMENTOS_NAC_I.iml
+.idea/
