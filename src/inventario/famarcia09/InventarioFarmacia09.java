@@ -105,8 +105,7 @@ public class InventarioFarmacia09 {
         // Solicita los datos de la venta.
         String nombreVenta = IO.readln("Ingrese el nombre del medicamento: ");
 
-        Integer cantidadVendida = Integer.parseInt(
-                IO.readln("Ingrese la cantidad vendida: "));
+        Integer cantidadVendida = Integer.parseInt(IO.readln("Ingrese la cantidad vendida: "));
 
         // Comprueba si el medicamento existe.
         boolean encontrado = false;
@@ -118,16 +117,13 @@ public class InventarioFarmacia09 {
             if (medicamento.getNombre().equalsIgnoreCase(nombreVenta)) {
 
                 // Comprueba que exista suficiente stock.
-                if (cantidadVendida > 0 &&
-                        cantidadVendida <= medicamento.getStockActual()) {
+                if (cantidadVendida > 0 && cantidadVendida <= medicamento.getStockActual()) {
 
                     // Resta las unidades vendidas al stock actual.
-                    medicamento.setStockActual(
-                            medicamento.getStockActual() - cantidadVendida);
+                    medicamento.setStockActual(medicamento.getStockActual() - cantidadVendida);
 
                     IO.println("Venta realizada correctamente.");
-                    IO.println("Nuevo stock: %s".formatted(
-                            medicamento.getStockActual()));
+                    IO.println("Nuevo stock: %s".formatted(medicamento.getStockActual()));
 
                 } else {
 
