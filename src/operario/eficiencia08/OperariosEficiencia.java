@@ -1,4 +1,4 @@
-package operarios.eficiencia08;
+package operario.eficiencia08;
 
 import java.util.ArrayList;
 
@@ -43,34 +43,71 @@ public class OperariosEficiencia {
         }
     }
 
+    // Calcula la eficiencia de un operario según sus datos.
     static int calculoEficiencia(OperarioInterface operario) {
-        if (operario.getHorasAusencia() <= 3 && operario.getTotalPupitresDefectuosos() < 300
-                && operario.getTotalPupitresProducidos() > 1000) {
+
+        // Si cumple las tres condiciones principales, obtiene la mayor eficiencia.
+        if (operario.getHorasAusencia() <= 3 &&
+                operario.getTotalPupitresDefectuosos() < 300 &&
+                operario.getTotalPupitresProducidos() > 1000) {
             return 20;
-        } else if (operario.getTotalPupitresDefectuosos() < 300 && operario.getTotalPupitresProducidos() > 1000) {
+
+            // Cumple las condiciones de defectuosos y producción.
+        } else if (operario.getTotalPupitresDefectuosos() < 300 &&
+                operario.getTotalPupitresProducidos() > 1000) {
             return 15;
-        } else if (operario.getHorasAusencia() <= 3 && operario.getTotalPupitresProducidos() > 1000) {
+
+            // Cumple las condiciones de ausencia y producción.
+        } else if (operario.getHorasAusencia() <= 3 &&
+                operario.getTotalPupitresProducidos() > 1000) {
             return 13;
-        } else if (operario.getHorasAusencia() <= 3 && operario.getTotalPupitresDefectuosos() < 300) {
+
+            // Cumple las condiciones de ausencia y defectuosos.
+        } else if (operario.getHorasAusencia() <= 3 &&
+                operario.getTotalPupitresDefectuosos() < 300) {
             return 12;
+
+            // Solo cumple la condición de producción.
         } else if (operario.getTotalPupitresProducidos() > 1000) {
             return 9;
+
+            // Solo cumple la condición de pupitres defectuosos.
         } else if (operario.getTotalPupitresDefectuosos() < 300) {
             return 8;
+
+            // Solo cumple la condición de horas de ausencia.
         } else if (operario.getHorasAusencia() <= 3) {
             return 7;
+
+            // Si no cumple ninguna de las condiciones anteriores.
         } else {
             return 5;
         }
     }
 
+
+    // Muestra en pantalla la información de todos los operarios.
     static void imprimirInfo(ArrayList<OperarioInterface> operarios) {
+
+        // Imprime el título de la información.
         IO.println("-------- OPERARIOS --------");
-        for (OperarioInterface operario: operarios) {
+
+        // Recorre todos los operarios de la lista.
+        for (OperarioInterface operario : operarios) {
+
+            // Muestra el código del operario.
             IO.println("CODIGO %s".formatted(operario.getCodigo()));
+
+            // Muestra sus horas de ausencia.
             IO.println("Horas ausentes %s".formatted(operario.getHorasAusencia()));
+
+            // Muestra la cantidad de pupitres defectuosos.
             IO.println("Pupitres defectuosos %s".formatted(operario.getTotalPupitresDefectuosos()));
+
+            // Muestra la cantidad de pupitres producidos.
             IO.println("Pupitres producidos %s".formatted(operario.getTotalPupitresProducidos()));
+
+            // Muestra la eficiencia calculada.
             IO.println("EFICIENCIA %s".formatted(operario.getEficiencia()));
         }
     }

@@ -20,7 +20,7 @@ public class MateriaEstuadiantes01 {
         IO.println("----------------ESTUDIANTES QUE REPROBARON MATEMATICA------------");
         for (int i = 0; i < tamanio; i++) {
             // Se lee desde el teclado el ci del estudiante
-            reprobadosMatematica[i] = IO.readln("Ingrese el ci de lestudiante %s %s".formatted(String.valueOf(i+1),": "));
+            reprobadosMatematica[i] = IO.readln("Ingrese el ci del estudiante %s %s".formatted(String.valueOf(i+1),": "));
         }
 
         // Solicita los estudiantes que reprobaron ingles
@@ -58,7 +58,5 @@ public class MateriaEstuadiantes01 {
             //Se imprime cada valor del array
             IO.println(reprobadosIngles[i]);
         }
-
-
     }
 }
